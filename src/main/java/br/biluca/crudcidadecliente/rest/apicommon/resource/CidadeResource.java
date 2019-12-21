@@ -24,4 +24,8 @@ public interface CidadeResource {
     @GetMapping(CrudCidadeClienteConstants.CIDADE_CONSULTAR_NOME)
     public List<Cidade> consultarPeloNome(@Param( value = "nomeCidade") String nomeCidade);
 
+    @GetMapping(CrudCidadeClienteConstants.CIDADE_CONSULTAR_SIGLA_UF)
+    public List<Cidade> consultarPelaSiglaUnidadeFederativa(@Param( value = "siglaUnidadeFederativa") String siglaUnidadeFederativa);
+
+
 }

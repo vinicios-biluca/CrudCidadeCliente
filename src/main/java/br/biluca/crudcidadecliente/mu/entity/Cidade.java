@@ -8,7 +8,7 @@ import javax.persistence.*;
 @Entity
 @Table(name = "cidade")
 @EntityListeners(AuditingEntityListener.class)
-public class Cidade implements IEntidade {
+public class Cidade extends AbstractEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -17,8 +17,9 @@ public class Cidade implements IEntidade {
     @Column(name = "nome",nullable = false)
     private String nome;
 
-    @Column(name = "siglauf",nullable = false)
-    private String siglaUF;
+    @ManyToOne(fetch=FetchType.LAZY)
+    @JoinColumn(name = "idUnidadeFederativa")
+    private UnidadeFederativa unidadeFederativa;
 
     public String getNome() {
         return nome;
@@ -28,12 +29,20 @@ public class Cidade implements IEntidade {
         this.nome = nome;
     }
 
-    public String getSiglaUF() {
-        return siglaUF;
+    public Long getIdCidade() {
+        return idCidade;
     }
 
-    public void setSiglaUF(String siglaUF) {
-        this.siglaUF = siglaUF;
+    public void setIdCidade(Long idCidade) {
+        this.idCidade = idCidade;
+    }
+
+    public UnidadeFederativa getUnidadeFederativa() {
+        return unidadeFederativa;
+    }
+
+    public void setUnidadeFederativa(UnidadeFederativa unidadeFederativa) {
+        this.unidadeFederativa = unidadeFederativa;
     }
 
     @Override

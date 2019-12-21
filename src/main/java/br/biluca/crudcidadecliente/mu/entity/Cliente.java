@@ -8,7 +8,7 @@ import java.util.Date;
 @Entity
 @Table(name = "cliente")
 @EntityListeners(AuditingEntityListener.class)
-public class Cliente implements IEntidade {
+public class Cliente extends AbstractEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -17,8 +17,9 @@ public class Cliente implements IEntidade {
     @Column(name = "nome",nullable = false)
     private String nome;
 
-    @Column(name = "sexo",nullable = false)
-    private String sexo;
+    @ManyToOne(fetch=FetchType.LAZY)
+    @JoinColumn(name = "idSexo")
+    private Sexo sexo;
 
     @Column(name = "datanascimento",nullable = false)
     private Date dataNascimento;
@@ -46,11 +47,11 @@ public class Cliente implements IEntidade {
         this.nome = nome;
     }
 
-    public String getSexo() {
+    public Sexo getSexo() {
         return sexo;
     }
 
-    public void setSexo(String sexo) {
+    public void setSexo(Sexo sexo) {
         this.sexo = sexo;
     }
 
