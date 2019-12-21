@@ -1,0 +1,9 @@
+/home/biluca/Desenvolvimento/Compasso-Test/crudcidadecliente/src/main/java/br/biluca/crudcidadecliente/rest/api/ClienteResourceImpl.java
+/home/biluca/Desenvolvimento/Compasso-Test/crudcidadecliente/src/main/java/br/biluca/crudcidadecliente/mu/entity/Cliente.java
+/home/biluca/Desenvolvimento/Compasso-Test/crudcidadecliente/src/main/java/br/biluca/crudcidadecliente/pu/ClienteRepositorio.java
+/home/biluca/Desenvolvimento/Compasso-Test/crudcidadecliente/src/main/java/br/biluca/crudcidadecliente/CrudCidadeClienteApplication.java
+/home/biluca/Desenvolvimento/Compasso-Test/crudcidadecliente/src/main/java/br/biluca/crudcidadecliente/mu/entity/IEntidade.java
+/home/biluca/Desenvolvimento/Compasso-Test/crudcidadecliente/src/main/java/br/biluca/crudcidadecliente/pu/CidadeRepositorio.java
+/home/biluca/Desenvolvimento/Compasso-Test/crudcidadecliente/src/main/java/br/biluca/crudcidadecliente/rest/apicommon/constant/CrudCidadeClienteConstants.java
+/home/biluca/Desenvolvimento/Compasso-Test/crudcidadecliente/src/main/java/br/biluca/crudcidadecliente/mu/entity/Cidade.java
+/home/biluca/Desenvolvimento/Compasso-Test/crudcidadecliente/src/main/java/br/biluca/crudcidadecliente/rest/apicommon/resource/ClienteResource.java

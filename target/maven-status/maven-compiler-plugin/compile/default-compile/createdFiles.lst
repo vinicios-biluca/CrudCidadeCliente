@@ -1,0 +1,11 @@
+br/biluca/crudcidadecliente/CrudCidadeClienteApplication.class
+br/biluca/crudcidadecliente/rest/api/impl/CidadeResourceImpl.class
+br/biluca/crudcidadecliente/mu/entity/IEntidade.class
+br/biluca/crudcidadecliente/rest/apicommon/constant/CrudCidadeClienteConstants.class
+br/biluca/crudcidadecliente/rest/apicommon/resource/ClienteResource.class
+br/biluca/crudcidadecliente/mu/entity/Cliente.class
+br/biluca/crudcidadecliente/pu/ClienteRepositorio.class
+br/biluca/crudcidadecliente/rest/apicommon/resource/CidadeResource.class
+br/biluca/crudcidadecliente/pu/CidadeRepositorio.class
+br/biluca/crudcidadecliente/rest/api/impl/ClienteResourceImpl.class
+br/biluca/crudcidadecliente/mu/entity/Cidade.class
