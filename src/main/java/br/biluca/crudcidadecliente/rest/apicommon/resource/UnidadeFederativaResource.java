@@ -1,7 +1,6 @@
 package br.biluca.crudcidadecliente.rest.apicommon.resource;
 
-import br.biluca.crudcidadecliente.mu.entity.Sexo;
-import br.biluca.crudcidadecliente.mu.entity.UnidadeFederativa;
+import br.biluca.crudcidadecliente.model.entity.UnidadeFederativa;
 import br.biluca.crudcidadecliente.rest.apicommon.constant.CrudCidadeClienteConstants;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -12,5 +11,5 @@ import java.util.List;
 public interface UnidadeFederativaResource {
 
     @GetMapping(CrudCidadeClienteConstants.UNIDADE_FEDERATIVA_CONSULTAR)
-    public List<UnidadeFederativa> consultar();
+    List<UnidadeFederativa> consultar();
 }

@@ -1,8 +1,9 @@
 package br.biluca.crudcidadecliente.service.impl;
 
-import br.biluca.crudcidadecliente.mu.entity.Cidade;
-import br.biluca.crudcidadecliente.pu.repository.CidadeRepository;
+import br.biluca.crudcidadecliente.model.entity.Cidade;
+import br.biluca.crudcidadecliente.persistence.repository.CidadeRepository;
 import br.biluca.crudcidadecliente.service.CidadeService;
+import br.biluca.crudcidadecliente.service.validation.CidadeValidator;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -14,8 +15,23 @@ public class CidadeServiceImpl implements CidadeService {
     @Autowired
     private CidadeRepository cidadeRepository;
 
+    @Autowired
+    private CidadeValidator cidadeValidator;
+
     @Override
-    public Cidade inserir(Cidade cidade) {
+    public Cidade inserir(Cidade cidade) throws Exception {
+        cidadeValidator.validarInsert(cidade);
+        return cidadeRepository.save(cidade);
+    }
+
+    @Override
+    public void deletar(Long idCidade) {
+        cidadeRepository.deleteById(idCidade);
+    }
+
+    @Override
+    public Cidade atualizar(Cidade cidade) throws Exception {
+        cidadeValidator.validarUpdate(cidade);
         return cidadeRepository.save(cidade);
     }
 

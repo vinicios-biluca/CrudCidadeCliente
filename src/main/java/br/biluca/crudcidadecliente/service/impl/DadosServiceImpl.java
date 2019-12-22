@@ -1,11 +1,11 @@
 package br.biluca.crudcidadecliente.service.impl;
 
-import br.biluca.crudcidadecliente.mu.base.SexoBase;
-import br.biluca.crudcidadecliente.mu.base.UnidadeFederativaBase;
-import br.biluca.crudcidadecliente.mu.entity.Sexo;
-import br.biluca.crudcidadecliente.mu.entity.UnidadeFederativa;
-import br.biluca.crudcidadecliente.pu.repository.SexoRepository;
-import br.biluca.crudcidadecliente.pu.repository.UnidadeFederativaRepository;
+import br.biluca.crudcidadecliente.model.base.SexoBase;
+import br.biluca.crudcidadecliente.model.base.UnidadeFederativaBase;
+import br.biluca.crudcidadecliente.model.entity.Sexo;
+import br.biluca.crudcidadecliente.model.entity.UnidadeFederativa;
+import br.biluca.crudcidadecliente.persistence.repository.SexoRepository;
+import br.biluca.crudcidadecliente.persistence.repository.UnidadeFederativaRepository;
 import br.biluca.crudcidadecliente.service.DadosService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

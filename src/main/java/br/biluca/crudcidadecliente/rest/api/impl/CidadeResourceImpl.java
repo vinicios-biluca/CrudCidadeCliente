@@ -1,6 +1,6 @@
 package br.biluca.crudcidadecliente.rest.api.impl;
 
-import br.biluca.crudcidadecliente.mu.entity.Cidade;
+import br.biluca.crudcidadecliente.model.entity.Cidade;
 import br.biluca.crudcidadecliente.rest.apicommon.resource.CidadeResource;
 import br.biluca.crudcidadecliente.service.CidadeService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,8 +16,18 @@ public class CidadeResourceImpl implements CidadeResource {
     private CidadeService cidadeService;
 
     @Override
-    public @Valid Cidade inserir(@Valid Cidade cidade) {
+    public @Valid Cidade inserir(@Valid Cidade cidade) throws Exception {
         return cidadeService.inserir(cidade);
+    }
+
+    @Override
+    public @Valid void deletar(Long idCidade) {
+        cidadeService.deletar(idCidade);
+    }
+
+    @Override
+    public @Valid Cidade atualizar(@Valid Cidade cidade) throws Exception {
+        return cidadeService.atualizar(cidade);
     }
 
     @Override

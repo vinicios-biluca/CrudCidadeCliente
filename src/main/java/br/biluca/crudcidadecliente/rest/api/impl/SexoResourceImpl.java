@@ -1,7 +1,6 @@
 package br.biluca.crudcidadecliente.rest.api.impl;
 
-import br.biluca.crudcidadecliente.mu.entity.Cliente;
-import br.biluca.crudcidadecliente.mu.entity.Sexo;
+import br.biluca.crudcidadecliente.model.entity.Sexo;
 import br.biluca.crudcidadecliente.rest.apicommon.resource.SexoResource;
 import br.biluca.crudcidadecliente.service.SexoService;
 import org.springframework.beans.factory.annotation.Autowired;
