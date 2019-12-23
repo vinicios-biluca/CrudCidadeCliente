@@ -3,6 +3,7 @@ package br.biluca.crudcidadecliente.rest.apicommon.resource;
 import br.biluca.crudcidadecliente.model.entity.Cidade;
 import br.biluca.crudcidadecliente.model.entity.Cliente;
 import br.biluca.crudcidadecliente.rest.apicommon.constant.CrudCidadeClienteConstants;
+import br.biluca.crudcidadecliente.rest.apicommon.dto.CidadeDTO;
 import org.springframework.data.repository.query.Param;
 import org.springframework.web.bind.annotation.*;
 
@@ -13,22 +14,22 @@ import java.util.List;
 public interface CidadeResource {
 
     @PostMapping(CrudCidadeClienteConstants.CIDADE_INSERIR)
-     @Valid Cidade inserir(@Valid @RequestBody Cidade cidade) throws Exception;
+     @Valid Cidade inserir(@Valid @RequestBody CidadeDTO cidadeDTO) throws Exception;
 
     @DeleteMapping(CrudCidadeClienteConstants.CIDADE_DELETAR)
      @Valid void deletar(@PathVariable(value = "id") Long idCidade);
 
     @PutMapping(CrudCidadeClienteConstants.CIDADE_ATUALIZAR)
-     @Valid Cidade atualizar(@Valid @RequestBody Cidade cidade) throws Exception;
+     @Valid CidadeDTO atualizar(@Valid @RequestBody CidadeDTO cidadeDTO) throws Exception;
 
     @GetMapping(CrudCidadeClienteConstants.CIDADE_CONSULTAR)
-     List<Cidade> consultar();
+     List<CidadeDTO> consultar();
 
     @GetMapping(CrudCidadeClienteConstants.CIDADE_CONSULTAR_NOME)
-     List<Cidade> consultarPeloNome(@Param( value = "nomeCidade") String nomeCidade);
+     List<CidadeDTO> consultarPeloNome(@Param( value = "nomeCidade") String nomeCidade);
 
     @GetMapping(CrudCidadeClienteConstants.CIDADE_CONSULTAR_SIGLA_UF)
-     List<Cidade> consultarPelaSiglaUnidadeFederativa(@Param( value = "siglaUnidadeFederativa") String siglaUnidadeFederativa);
+     List<CidadeDTO> consultarPelaSiglaUnidadeFederativa(@Param( value = "siglaUnidadeFederativa") String siglaUnidadeFederativa);
 
 
 }

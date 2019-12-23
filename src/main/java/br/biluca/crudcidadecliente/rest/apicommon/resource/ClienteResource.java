@@ -2,6 +2,7 @@ package br.biluca.crudcidadecliente.rest.apicommon.resource;
 
 import br.biluca.crudcidadecliente.model.entity.Cliente;
 import br.biluca.crudcidadecliente.rest.apicommon.constant.CrudCidadeClienteConstants;
+import br.biluca.crudcidadecliente.rest.apicommon.dto.ClienteDTO;
 import org.springframework.data.repository.query.Param;
 import org.springframework.web.bind.annotation.*;
 
@@ -13,22 +14,22 @@ import java.util.List;
 public interface ClienteResource {
 
     @PostMapping(CrudCidadeClienteConstants.CLIENTE_INSERIR)
-    @Valid Cliente inserir(@Valid @RequestBody Cliente cliente) throws Exception;
+    @Valid ClienteDTO inserir(@Valid @RequestBody ClienteDTO cliente) throws Exception;
 
     @DeleteMapping(CrudCidadeClienteConstants.CLIENTE_DELETAR)
     @Valid void deletar(@PathVariable(value = "id") Long idCliente) throws Exception;
 
     @PutMapping(CrudCidadeClienteConstants.CLIENTE_ATUALIZAR)
-    @Valid Cliente atualizar(@Valid @RequestBody Cliente cliente) throws Exception;
+    @Valid ClienteDTO atualizar(@Valid @RequestBody ClienteDTO cliente) throws Exception;
 
     @GetMapping(CrudCidadeClienteConstants.CLIENTE_CONSULTAR_ID)
-    Cliente consultar(@PathVariable(value = "id") Long idCliente) throws Exception;
+    ClienteDTO consultar(@PathVariable(value = "id") Long idCliente) throws Exception;
 
     @GetMapping(CrudCidadeClienteConstants.CLIENTE_CONSULTAR)
-    List<Cliente> consultar();
+    List<ClienteDTO> consultar();
 
     @GetMapping(CrudCidadeClienteConstants.CLIENTE_CONSULTAR_NOME)
-    List<Cliente> consultarPeloNome(@Param(value = "nomeCliente") String nomeCliente);
+    List<ClienteDTO> consultarPeloNome(@Param(value = "nomeCliente") String nomeCliente);
 
 
 }

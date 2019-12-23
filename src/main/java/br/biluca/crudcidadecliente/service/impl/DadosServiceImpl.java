@@ -11,6 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Objects;
 
 @Service
 public class DadosServiceImpl implements DadosService {
@@ -34,15 +35,29 @@ public class DadosServiceImpl implements DadosService {
     }
 
     private void inserirListaBaseUnidadeFederetiva(List<UnidadeFederativa> listBaseUnidadeFederativa) {
-        for (UnidadeFederativa unidadeFederativa:listBaseUnidadeFederativa) {
-            unidadeFederativaRepository.save(unidadeFederativa);
+        for (UnidadeFederativa unidadeFederativa : listBaseUnidadeFederativa) {
+            if (naoExisteUnidadeFederativaComSiglaIgual(unidadeFederativa.getSigla())) {
+                unidadeFederativaRepository.save(unidadeFederativa);
+            }
         }
 
     }
 
+    private boolean naoExisteUnidadeFederativaComSiglaIgual(String sigla) {
+        UnidadeFederativa unidadeFederativa = unidadeFederativaRepository.findUnidadeFederativaPelaSigla(sigla);
+        return Objects.isNull(unidadeFederativa);
+    }
+
     private void inserirListaBaseSexo(List<Sexo> listaBaseSexo) {
-        for (Sexo sexo:listaBaseSexo) {
-            sexoRepository.save(sexo);
+        for (Sexo sexo : listaBaseSexo) {
+            if (naoExiteSexoComSiglaIgual(sexo.getSigla())) {
+                sexoRepository.save(sexo);
+            }
         }
+    }
+
+    private boolean naoExiteSexoComSiglaIgual(String sigla) {
+        Sexo sexo = sexoRepository.findSexoPelaSigla(sigla);
+        return Objects.isNull(sexo);
     }
 }
