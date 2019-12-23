@@ -10,10 +10,10 @@ import java.util.List;
 @Repository
 public interface CidadeRepository extends JpaRepository<Cidade, Long> {
 
-    @Query("  select cidade from Cidade cidade where cidade.nome like ?1% ")
+    @Query("  select cidade from Cidade cidade where cidade.nome like %?1% ")
     List<Cidade> consultarPeloNome(String nomeCidade);
 
-    @Query("  select cidade from Cidade cidade ")
+    @Query("  select cidade from Cidade cidade join cidade.unidadeFederativa uf where uf.sigla like ?1 ")
     List<Cidade> consultarPelaSiglaUnidadeFederativa(String siglaUnidadeFederativa);
 
 }

@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Objects;
 import java.util.Optional;
 
 @Service
@@ -55,6 +56,11 @@ public class ClienteServiceImpl implements ClienteService {
     }
 
     private Cliente findAndValidadeClienteById(Long idCliente) throws Exception {
+
+        if(Objects.isNull(idCliente)){
+            throw new Exception("Você deve informar o id da Entidade!");
+        }
+
         Optional<Cliente> clienteOptional = clienteRepository.findById(idCliente);
         if(clienteOptional.isPresent()){
             return clienteOptional.get();
