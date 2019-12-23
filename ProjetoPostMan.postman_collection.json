@@ -1,0 +1,375 @@
+{
+	"info": {
+		"_postman_id": "4d33cecb-74b8-47e8-830b-75991d418eb9",
+		"name": "CrudCidadeClienteCollection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Criação Dados Base",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/crudcidadecliente/v1/dadosbase",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"crudcidadecliente",
+						"v1",
+						"dadosbase"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Inserir Cliente",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n        \"nome\": \"Vinicios Lorencena\",\n        \"dataNascimento\": \"1991-01-17T00:50:34.600+0000\",\n        \"idade\": 28,\n        \"sexo\":{\n        \"idSexo\": 54,\n        \"descricao\": \"Masculino\",\n        \"sigla\": \"M\"\n    \t},\n        \"cidadeResidencia\":{\n        \"idCidade\": 85,\n        \"nome\": \"Ijuí\",\n        \"unidadeFederativa\": {\n            \"idUnidadeFederativa\": 77,\n            \"descricao\": \"Rio Grande do Sul\",\n            \"sigla\": \"RS\"\n        }\n    }\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/crudcidadecliente/v1/cliente/inserir",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"crudcidadecliente",
+						"v1",
+						"cliente",
+						"inserir"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Deletar Cliente",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/crudcidadecliente/v1/cliente/deletar/90",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"crudcidadecliente",
+						"v1",
+						"cliente",
+						"deletar",
+						"90"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Atualizar Cliente",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "\n    {\n        \"idCliente\": 90,\n        \"nome\": \"Vinicios Lorencena Biluca\",\n        \"sexo\": {\n            \"idSexo\": 54,\n            \"descricao\": \"Masculino\",\n            \"sigla\": \"M\"\n        },\n        \"dataNascimento\": \"1991-01-17T00:50:35.000+0000\",\n        \"idade\": 28,\n        \"cidadeResidencia\": {\n            \"idCidade\": 85,\n            \"nome\": \"Ijuí\",\n            \"unidadeFederativa\": {\n                \"idUnidadeFederativa\": 77,\n                \"descricao\": \"Rio Grande do Sul\",\n                \"sigla\": \"RS\"\n            }\n        }\n    }\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/crudcidadecliente/v1/cliente/atualizar",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"crudcidadecliente",
+						"v1",
+						"cliente",
+						"atualizar"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Consultar Cliente",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/crudcidadecliente/v1/cliente/consultar",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"crudcidadecliente",
+						"v1",
+						"cliente",
+						"consultar"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Consultar Cliente pelo ID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/crudcidadecliente/v1/cliente/46",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"crudcidadecliente",
+						"v1",
+						"cliente",
+						"46"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Consultar Cliente pelo Nome",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/crudcidadecliente/v1/cliente/consultarpelonome?nomeCliente=ANgo",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"crudcidadecliente",
+						"v1",
+						"cliente",
+						"consultarpelonome"
+					],
+					"query": [
+						{
+							"key": "nomeCliente",
+							"value": "ANgo"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Inserir Cidade",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n        \"nome\": \"Porto Alegre\",\n    \t\"unidadeFederativa\":  {\n        \"idUnidadeFederativa\": 77,\n        \"descricao\": \"Rio Grande do Sul\",\n        \"sigla\": \"RS\"\n    }\n        \n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/crudcidadecliente/v1/cidade/inserir",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"crudcidadecliente",
+						"v1",
+						"cidade",
+						"inserir"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Consultar Cidade",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/crudcidadecliente/v1/cidade/consultar",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"crudcidadecliente",
+						"v1",
+						"cidade",
+						"consultar"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Consultar Cidade pelo Nome",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/crudcidadecliente/v1/cidade/consultarpelonome?nomeCidade=Porto Alegre",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"crudcidadecliente",
+						"v1",
+						"cidade",
+						"consultarpelonome"
+					],
+					"query": [
+						{
+							"key": "nomeCidade",
+							"value": "Porto Alegre"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Consultar Cidade pela Sigla Unidade Federativa",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/crudcidadecliente/v1/cidade/consultarpelasiglaunidadefederativa?siglaUnidadeFederativa=RS",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"crudcidadecliente",
+						"v1",
+						"cidade",
+						"consultarpelasiglaunidadefederativa"
+					],
+					"query": [
+						{
+							"key": "siglaUnidadeFederativa",
+							"value": "RS"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Consultar Unidade Federativa",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/crudcidadecliente/v1/unidadefederativa/consultar",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"crudcidadecliente",
+						"v1",
+						"unidadefederativa",
+						"consultar"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Consultar Sexo",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/crudcidadecliente/v1/sexo/consultar",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"crudcidadecliente",
+						"v1",
+						"sexo",
+						"consultar"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
