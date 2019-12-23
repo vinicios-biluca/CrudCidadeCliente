@@ -2,7 +2,7 @@
 Projeto Rest Api desenvolvido com base no SpringBoot.
 
 Ferramentas Utilizadas:
-> -MySQL
+> - MySQL
 > -Postman
 > -Spring Boot
 > -JPA 
