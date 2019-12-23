@@ -15,9 +15,9 @@ Para acesso ao Banco de Dados, deverão ser informados no arquivo
 [CrudCidadeCliente/src/main/resources/application.properties]
 os parametros a seguir:
     
-> spring.datasource.url = jdbc:mysql://localhost:3306/[NOME_DO_BANCO]?useSSL=false
-> spring.datasource.username = [USERNAME]
->  spring.datasource.password = [PASSWORD]
+> - spring.datasource.url = jdbc:mysql://localhost:3306/[NOME_DO_BANCO]?useSSL=false
+> - spring.datasource.username = [USERNAME]
+> - spring.datasource.password = [PASSWORD]
 
 Para rodar a API basta importar o projeto na IDE de escolha e rodar o comando:
 > sudo mvn spring-boot:run
